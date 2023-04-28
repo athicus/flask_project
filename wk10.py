@@ -10,7 +10,7 @@ def christmas_greeting():
     return "Merry Christmas"    
 
 @app.route("/newyear")
-def hello_admin():
+def newyear_greeting():
     return "Happy New Year"
 
 @app.route("/greetings/<holiday>")
@@ -18,7 +18,7 @@ def hello_greeting(holiday):
     if holiday == "christmas":
         return redirect(url_for("christmas_greeting"))
     else:
-        return redirect(url_for("Happy New Years"))
+        return redirect(url_for("newyear_greeting"))
 
 if __name__ == "__main__":
     app.run()
