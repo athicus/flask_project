@@ -11,7 +11,7 @@ def hello_python():
 
 @app.route("/greetings/<holiday>")
 def hello_greeting(holiday):
-    if greeting == "christmas":
+    if holiday == "christmas":
         return redirect(url_for("Merry Chirstmas"))
     else:
         return redirect(url_for("Happy New Years"))
