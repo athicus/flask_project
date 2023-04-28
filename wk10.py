@@ -5,24 +5,20 @@ app = Flask(__name__)
 def hello_world():
     return "Hello and <b>Happy Holidays</b>"
 
-@app.route("/python")
-def hello_python():
-    return "Hello Python"
+@app.route("/christmas")
+def christmas_greeting():
+    return "Merry Christmas"    
+
+@app.route("/newyear")
+def hello_admin():
+    return "Happy New Year"
 
 @app.route("/greetings/<holiday>")
 def hello_greeting(holiday):
     if holiday == "christmas":
-        return redirect(url_for("Merry Chirstmas"))
+        return redirect(url_for("christmas_greeting"))
     else:
         return redirect(url_for("Happy New Years"))
-
-@app.route("/admin")
-def hello_admin():
-    return "Hello Admin"
-
-@app.route("/guest/<guest>")
-def hello_guest(guest):
-    return "Hello {0} as Guest".format(guest)
 
 if __name__ == "__main__":
     app.run()
