@@ -3,18 +3,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "Hello <b>World</b>"
+    return "Hello and <b>Happy Holidays</b>"
 
 @app.route("/python")
 def hello_python():
     return "Hello Python"
 
-@app.route("/user/<name>")
-def hello_user(name):
-    if name == "admin":
-        return redirect(url_for("hello_admin"))
+@app.route("/greetings/<holiday>")
+def hello_greeting(holiday):
+    if greeting == "christmas":
+        return redirect(url_for("Merry Chirstmas"))
     else:
-        return redirect(url_for("hello_guest", guest = name))
+        return redirect(url_for("Happy New Years"))
 
 @app.route("/admin")
 def hello_admin():
